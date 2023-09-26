@@ -1,11 +1,9 @@
-
+import  Body  from "./components/layouts/Body";
 
 
 function App() {
   return (
-    <div className="text-3xl">
-      React Project 
-    </div>
+    <Body></Body>
   );
 }
 
