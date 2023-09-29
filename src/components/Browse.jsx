@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Header from "./layouts/Header";
+import { Box } from "@mui/material";
 
 const Browse = () => {
   return (
-    <div>Browse</div>
-  )
-}
+    <Box>
+      <Header />
+    </Box>
+  );
+};
 
 export default Browse;
