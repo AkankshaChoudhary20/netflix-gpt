@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { Box, Typography } from "@mui/material";
 import Header from "./layouts/Header";
 import { checkValidData } from "../utils/validate";
-import { useNavigate } from "react-router-dom";
 
 import {
   createUserWithEmailAndPassword,
@@ -11,7 +10,6 @@ import {
 import { auth } from "../utils/firebase";
 
 const Login = () => {
-  const navigate = useNavigate();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -43,12 +41,11 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log("user signed in", user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMessage(errorMessage);
+          setErrorMessage(errorMessage + "-" + errorCode);
         });
     } else {
       //Sign In logic
@@ -60,7 +57,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
