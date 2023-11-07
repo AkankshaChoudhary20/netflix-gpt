@@ -48,17 +48,16 @@ const Header = () => {
     <Box className="absolute w-screen h-24 pt-6 pl-10 pb-4 bg-gradient-to-b from-black z-10 flex justify-between">
       <img className="w-40" src={LOGO} alt="netflix-header-logo"></img>
       {user && (
-        <Box className="flex items-center">
-          <Box className="text-white mr-2">{user?.email}</Box>
-          <img
-            className="w-12 h-12 mr-2"
-            src="https://occ-0-1492-3662.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY20DrC9-11ewwAs6nfEgb1vrORxRPP9IGmlW1WtKuaLIz8VxCx5NryzDK3_ez064IsBGdXjVUT59G5IRuFdqZlCJCneepU.png?r=229"
-            alt="netflix-profile-logo"
-          ></img>
-
-          <button className="mr-2 text-white" onClick={onLogout}>
-            Sign Out
-          </button>
+        <Box className="flex items-center mr-2">
+          <Box className="flex flex-col">
+            <Box className="text-white p-2   ">{user?.email}</Box>
+            <button
+              className="bg-red-500 p-2 rounded-lg text-white"
+              onClick={onLogout}
+            >
+              Sign Out
+            </button>
+          </Box>
         </Box>
       )}
     </Box>
